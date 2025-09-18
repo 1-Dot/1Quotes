@@ -1,0 +1,39 @@
+﻿<Window x:Class="_1Quotes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_1Quotes"
+        mc:Ignorable="d"
+        Title="1Quotes" Height="376" Width="740" ResizeMode='NoResize' Icon="/1Quotes.ico" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel Margin="24">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" HorizontalAlignment="Left"><Run Text="1Quotes"/><Run Language="zh-cn" Text=" 1.0 by 1Dot"/><LineBreak/><Run Text="直角引号助手已激活"/><LineBreak/><Run Text="在微软拼音输入法的中文状态下点按 Shift + [ 输入「，Shift + ] 输入 」"/><Run Text="，可配置"/><LineBreak/><Run Text="对于"/><Run Text="以管理员身份运行的窗口不适用，除非你同样以管理员身份启动 1Quotes"/></TextBlock>
+
+                <Button Grid.Column="1" Style="{DynamicResource AccentButtonStyle}" Content="此项目的 GitHub 仓库" x:Name="RepoButton"/>
+
+            </Grid>
+
+            <Rectangle Height="1" Fill="#888" Margin="0,32"/>
+
+            <GroupBox Header="设置">
+                <StackPanel>
+                    <CheckBox x:Name="StartupCheckBox" Content="开机自启动（需要管理员身份）" />
+                    <Rectangle Height="10"/>
+                    <Label Content="键入方式"/>
+                    <ComboBox x:Name="InputModeComboBox" Width="160" HorizontalAlignment="Left" SelectedIndex="0" Margin="0,0,0,15">
+                        <ComboBoxItem Content="Shift + [" />
+                        <ComboBoxItem Content="[" />
+                    </ComboBox>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>
